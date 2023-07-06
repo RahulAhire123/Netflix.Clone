@@ -27,7 +27,8 @@ function fetchAndBuildSection(){
     .then(res => {
         const categories=res.genres;
         if(Array.isArray(categories) && categories.length){
-            categories.slice(0,1).forEach(category => {
+            // categories.slice(0,1).forEach(category => {
+            categories.forEach(category => {
                 fetchAndbuildMovieSection(apiPaths.fetchMoviesList(category.id),category.name);
             });        
         }
